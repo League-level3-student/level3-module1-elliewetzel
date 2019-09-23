@@ -88,16 +88,16 @@ public class DynamicIntegerArray {
 			else if(i > location) {
 				l[i-1] = k[i];
 			}
-			
+			else {
+			continue;
+			}
 		}
+		k = l;
 			//C. if i  is less than location
 			//		set the element at i of the new array to the element at i of the member array
-			
 			//D. else if i  is greater than location
 			//		set the element at i - 1 of the new array to the element at i of the member array
-			
-			E. else, continue;
-			
+			//E. else, continue;
 		//F. set the member array equal to the new array
 	}
 	
@@ -105,12 +105,15 @@ public class DynamicIntegerArray {
 	
 	//11. Complete the size method so that it returns the length of the member array.
 	public int size() {
-		return 0;
+		return k.length;
 	}
 	
 	//12. Complete the clear array so that it sets the member array 
 	//    equal to a new integer array of size 0
 	public void clear() {
+		int[] y;
+		y= new int[0];
+		k = y;
 	}
 	
 	//13. Run the test again to see if you are finished.
