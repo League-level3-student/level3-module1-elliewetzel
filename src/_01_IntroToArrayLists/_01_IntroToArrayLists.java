@@ -35,17 +35,20 @@ public class _01_IntroToArrayLists {
 		
 		//5. Print only the even numbered elements in the list.
 		for(int i = 0; i < names.size(); i++) {
-			System.out.println(names.get(i+2));
+			System.out.println(names.get(i++));
 		}
 				
 		
 		//6. Print all the Strings in reverse order.
-		for(int h = names.size(); h>0; h--) {
+		for(int h = names.size(); h <= 0; h--) {
 			System.out.println(names.get(h));
 		}
+		String r = "e";
 		//7. Print only the Strings that have the letter 'e' in them.
-		for(int g = 0; g< names.size(); g++) {
-			if()
+		for(int g = 0; g < names.size(); g++) {
+			if(names.get(g).contains(r)) {
+				System.out.println(names.get(g));
+			}
 		}
 	}
 }
