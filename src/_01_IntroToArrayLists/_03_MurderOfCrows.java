@@ -30,7 +30,10 @@ public class _03_MurderOfCrows {
          * 1. One of the Crows has eaten the diamond. You need to search through the stomach of each Crow, 
          * then print the name of the guilty Crow.
          */
-        
+        hideTheDiamond();
+        for(int i =0; i < theMurder.size(); i++) {
+        theMurder.fillCrowsStomach();
+        }
         /* 2. How many innocent crows had to die before the diamond was found? */
     	
     }
@@ -58,12 +61,10 @@ class Crow {
         this.name = name;
         fillCrowsStomach();
     }
-
     private void fillCrowsStomach() {
         for (int i = 0; i < 10; i++)
             this.stomachContents.add(getRandomCrowFood());
     }
-
     private String getRandomCrowFood() {
         int randomness = new Random().nextInt(4);
         if (randomness == 0) return "carrion";
@@ -72,14 +73,11 @@ class Crow {
         else if (randomness == 3)return "spider";
         else return "grub";
     }
-
     public String getName() {
         return name;
     }
-
     public ArrayList<String> getStomachContents() {
         return stomachContents;
     }
-
 }
 
