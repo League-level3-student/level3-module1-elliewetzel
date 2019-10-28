@@ -8,9 +8,6 @@ import java.util.ArrayList;
  */
 
 public class _04_RemovingStuffFromArrayLists {
-
-	public static void main(String[] args) {
-
 		class Stuff {
 			public String type;
 		}
@@ -24,7 +21,8 @@ public class _04_RemovingStuffFromArrayLists {
 				type = "dirt";
 			}
 		}
-		ArrayList<Stuff> stuffIFoundInTheYard = new ArrayList<Stuff>();
+		public static void main(String[] args) {
+		/*ArrayList<Stuff> stuffIFoundInTheYard = new ArrayList<Stuff>();
 		stuffIFoundInTheYard.add(new Worm());
 		stuffIFoundInTheYard.add(new Dirt());
 		stuffIFoundInTheYard.add(new Dirt());
@@ -35,13 +33,13 @@ public class _04_RemovingStuffFromArrayLists {
 		System.out.println(stuffIFoundInTheYard.size());
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
-		for(int i = stuffIFoundInTheYard.size()-1; i >=0; i--) {
+		/*for(int i = stuffIFoundInTheYard.size()-1; i >=0; i--) {
 			if(stuffIFoundInTheYard.get(i) instanceof Dirt) {
 				stuffIFoundInTheYard.remove(i);
 			}
-		}
+		}*/
 		
-		System.out.println(stuffIFoundInTheYard.size()); // should be 2
+	//	System.out.println(stuffIFoundInTheYard.size()); // should be 2
 
 		ArrayList<Character> truth = new ArrayList<Character>();
 		truth.add('c');
@@ -76,12 +74,14 @@ public class _04_RemovingStuffFromArrayLists {
 		truth.add('r');
 		truth.add('#');
 		/* TODO 2: Remove the hash symbols and print out the truth. */
-		for(int j = truth.size()-1; i <=0; i--) {
-			if(truth.get(j) instanceof "#") {
+		for(int j = truth.size()-1; j >=0; j--) {
+			if(truth.get(j) == '#') {
 				truth.remove(j);
 			}
 		}
-		
+		for(int k = 0; k <= truth.size()-1; k++) {
+			System.out.print(truth.get(k));
+		}
 		
 	}
 }
