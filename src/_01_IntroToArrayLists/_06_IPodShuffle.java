@@ -1,5 +1,7 @@
 package _01_IntroToArrayLists;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,10 +12,12 @@ import javax.swing.JPanel;
 
 //Copyright The League of Amazing Programmers, 2015
 
-public class _06_IPodShuffle{
+public class _06_IPodShuffle implements MouseListener{
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
 	JButton suprise = new JButton();
+	ArrayList<Song> song = new ArrayList<Song>();
+	int r = new Random().nextInt(7);
 	public _06_IPodShuffle() {
 		// 1. Use the Song class the play the demo.mp3 file.
 				Song s = new Song("demo.mp3");
@@ -35,27 +39,67 @@ public class _06_IPodShuffle{
 	
 	public static void main(String[] args) {
 		
-		new _06_IPodShuffle();
-		
+		_06_IPodShuffle h = new _06_IPodShuffle();
+		h.randomMusic();
 		
 	}
 	
 	public void randomMusic() {
-		
 		frame.setVisible(true);
+		//frame.setSize(50, 50);
 		frame.add(panel);
 		panel.add(suprise);
 		suprise.setText("Suprise Me!");
+		suprise.addMouseListener(this);
 		
+		//ArrayList<Song> song = new ArrayList<Song>();
+		Song a = new Song("fantasyorchestra.wav");
+		song.add(a);
+		Song b = new Song("musicaldrone.wav");
+		song.add(b);
+		Song c = new Song("musicbox.wav");
+		song.add(c);
+		Song d = new Song("musicboxmelody.wav");
+		song.add(d);
+		Song e = new Song("snowfall.mp3");
+		song.add(e);
+		Song f = new Song("musical");
+		song.add(f);
+		Song g = new Song("musicsession.flac");
+		song.add(g);
 		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
-		ArrayList<Song> song = new ArrayList<Song>();
-		Song a = new Song("");
-		Song b = new Song("");
-		Song c = new Song("");
-		Song d = new Song("");
-		Song f = new Song("");
-		Song g = new Song("");
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		if(e.equals(suprise)) {
+			song.get(r).play();
+		}
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
